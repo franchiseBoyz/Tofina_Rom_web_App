@@ -1,16 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Flex, Box, Text, Button} from '@chakra-ui/react';
-<<<<<<< HEAD
 import {baseUrl, fetchApi} from '../utils/fetchApi';
 import Property from '../components/Property';
 
 
-const Banner = ({purpose, title1, title2, desc1, desc2, buttonText, imageUrl, linkName}) => (
-=======
-
 const Banner = ({purpose, title2, title1, desc1, desc2, buttonText, imageUrl, linkName}) => (
->>>>>>> origin/master
   <Flex flexWrap="wrap" justifyContent='center' alignItems='center' m="10">
     <Image src ={imageUrl} width={500} height={300} alt="banner" />
     <Box p='5'>
@@ -24,20 +19,11 @@ const Banner = ({purpose, title2, title1, desc1, desc2, buttonText, imageUrl, li
   </Flex>
 );
 
-<<<<<<< HEAD
 export default function Home({propertiesForSale, propertiesForRent}) {
   console.log(propertiesForSale, propertiesForRent);
-
-
   return (
     <Box>
-
-=======
-export default function Home() {
-  return (
-    <div>
-      <h1> Real Estate App</h1>
->>>>>>> origin/master
+      <h1> Tofina ROM Builders</h1>
       <Banner
        purpose="RENT A HOME"
        title1="Rental Homes for"
@@ -48,13 +34,11 @@ export default function Home() {
        linkName="/search?purpose=for-rent"
        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
       />
-<<<<<<< HEAD
+
       <Flex flexWrap='wrap'>
         {propertiesForRent.map((property) => <Property property={property} key={property.id} />)}
       </Flex>
-=======
 
->>>>>>> origin/master
       <Banner
        purpose="BUY A HOME"
        title1="Find, Buy and Own Your"
@@ -64,12 +48,12 @@ export default function Home() {
        buttonText="Explore Buying"
        linkName="/search?purpose=for-sale"
        imageUrl="https://bayut-production.s3.eu-central-1.amazonaws.com/image/145426814/33973352624c48628e41f2ec460faba4"
-      /> 
-<<<<<<< HEAD
+       />
+      <Flex flexWrap='wrap'>
         {propertiesForSale.map((property) => <Property property={property} key={property.id} />)}
-
+      </Flex>
     </Box>
-  )
+  );
 }
 
 export async function getStaticProps() {
@@ -83,8 +67,4 @@ export async function getStaticProps() {
     }
   }
 }
-=======
-    </div>
-  )
-}
->>>>>>> origin/master
+
