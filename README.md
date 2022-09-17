@@ -18,4 +18,5 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 # Tofina_Rom_web_App
 A simple Real estate app for renting and buying homes.
->>>>>>> 8e94aa4f4feee5951481e07b4331c43355269826
+
+Ⓒ Troye Gilbert.
