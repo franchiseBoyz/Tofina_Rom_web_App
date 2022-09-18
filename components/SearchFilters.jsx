@@ -6,6 +6,7 @@ import Image from 'next/image';
 
 import {filterData, getFilterValues } from '../utils/filterData';
 import { baseUrl, fetchApi } from '../utils/fetchApi';
+
 import noresult from '../assets/images/noresult.svg'
 
 const SearchFilters = () => {
@@ -17,16 +18,27 @@ const SearchFilters = () => {
     const [showLocations, setShowLocations] = useState(false);
     const [loading, setLoading] = useState(false);
 
+
+
+
+const SearchFilters = () => {
+    const [filters, setFilters] = useState(filterData);
+
+
     const searchProperties = (filterValues) => {
         const path = router.pathname;
         const { query } = router;
         const values = getFilterValues(filterValues);
 
         values.forEach((item) => {
+
             if(item.value && filterValues?.[item.name]){
               query[item.name] = item.value
             }
             
+
+            query[item.name] = item.value
+
         })
 
 
@@ -34,8 +46,15 @@ const SearchFilters = () => {
 
     }
 
+
  return (
     <Flex bg='gray.100' p='4' justifyContent='center' flexWrap='wrap'>
+
+
+
+ return (
+    <Flex backgrund='gray.100' p='4' justifyContent='center' flexWrap='wrap'>
+
         {filters.map((filter) => (
             <Box key={filter.queryName}>
                 <Select 
@@ -53,6 +72,7 @@ const SearchFilters = () => {
                 </Select>
             </Box>
         ))}
+
         <Flex flexDir='column'>
         <Button onClick={() => setShowLocations(!showLocations)} border='1px' borderColor='gray.200' marginTop='2' >
           Search Location
@@ -107,6 +127,7 @@ const SearchFilters = () => {
           </Flex>
         )}
       </Flex>
+
     </Flex>
  )   
 }
